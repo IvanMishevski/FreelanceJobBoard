@@ -1,0 +1,22 @@
+.footer{
+    width: 100vw;
+    display:block;
+    overflow: hidden;
+    padding: 45px 0;
+    box-sizing: border-box ;
+    background-color: #415A77;
+    height: 80px;
+    position: absolute; 
+    bottom: 0;
+}
+.inner_footer{
+    width:1100px;
+    margin: 0 auto;
+    display: block;
+    height: 100%;
+}
+.inner_footer p{
+    color:white;
+    text-align: center;
+    
+}
