@@ -1,0 +1,36 @@
+.welcome-text {
+   position: absolute;
+   width: 600px;
+   height: 300px;
+   margin: 5% 25%;
+   text-align: center;
+   overflow: hidden;
+   background-color: #415A77;
+   padding: 50px 30px;
+   border-radius: 1rem;
+   border-style: double;
+   border-color: white;
+   border-width: 1rem
+  }
+  .welcome-text h1 {
+    color:white;
+    text-align:center;
+    text-transform: uppercase;
+    font-size: 50px;
+  }
+  .welcome-text p {
+    border: 1px solid white;
+    padding: 10px 25px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-top: 20px;
+    display: inline-block;
+    color: white;
+  }
+  .welcome-text p:hover {
+    cursor: pointer;
+    transition: 0.5s;
+    background-color: white;
+    color: #415A77;
+  }
