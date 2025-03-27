@@ -1,31 +1,31 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router';
+import React, { useActionState, useState } from 'react';
+import { Link, useNavigate } from 'react-router';
 import './Login.css'; 
 
-export default function Login() {
-    const [formData, setFormData] = useState({
-        email: '',
-        password: ''
-    });
+export default function Login({
+    onLogin
+}) {
+    const navigate = useNavigate()
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData(prevState => ({
-            ...prevState,
-            [name]: value
-        }));
-    };
+    const loginHandler = (previousState, formData) => {
+        
+        const values = Object.fromEntries(formData);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Handle login logic here
-        console.log('Login submitted:', formData);
+        onLogin(values.email);
+
+        // navigate('/jobs')
+
+        return values;
     };
+    const[values, loginAction, isPending] = useActionState(loginHandler, {email: '',password: ''});
+    
+
+    
 
     return (
         <div className="wrapper-login">
             <div className="title"><p>Login Form</p></div>
-            <form onSubmit={handleSubmit}>
+            <form action={loginAction}>
                 <div className="row">
                     <i className="fa-solid fa-envelope"></i>
                     <input 
@@ -33,8 +33,7 @@ export default function Login() {
                         name="email" 
                         id="email" 
                         placeholder="john.doe@gmail.com"
-                        value={formData.email}
-                        onChange={handleChange}
+                        
                     />
                 </div>
                 <div className="row">
@@ -45,12 +44,11 @@ export default function Login() {
                         id="password" 
                         placeholder="******" 
                         autoComplete="on"
-                        value={formData.password}
-                        onChange={handleChange}
+                        
                     />
                 </div>
                 <div className="row button">
-                    <input type="submit" value="Login" />
+                    <input type="submit" value="Login" disabled={isPending}/>
                 </div>
                 <div className="signup-link">Not a member? <Link to="/register">Register</Link></div>
             </form>

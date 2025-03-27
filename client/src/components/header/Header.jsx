@@ -9,17 +9,15 @@ export default function Header() {
                    <h1>Freelance <span>JobBoard</span></h1>
                 </div>
                 <ul className="navigation">
-                    <Link to="/"><a><li>Home</li></a></Link>
-                    <Link to="/jobs"><a><li>All jobs</li></a></Link>
-                    <Link to="/create"><a><li>Create</li></a></Link>
-                    <Link to="/profile"><a><li>Profile</li></a></Link>
-                    <Link to="/login"><a><li>Login</li></a></Link>
-                    <Link to="/register"><a><li>Register</li></a></Link>
-                    <Link to="/logout"><a><li>Logout</li></a></Link>
-
+                    <Link to="/"><li>Home</li></Link>
+                    <Link to="/jobs"><li>All jobs</li></Link>
+                    <Link to="/create"><li>Create</li></Link>
+                    <Link to="/profile"><li>Profile</li></Link>
+                    <Link to="/login"><li>Login</li></Link>
+                    <Link to="/register"><li>Register</li></Link>
+                    <Link to="/logout"><li>Logout</li></Link>
                 </ul>
             </div>
-
         </header>
     );
 }
