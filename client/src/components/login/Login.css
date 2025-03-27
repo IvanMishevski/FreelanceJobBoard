@@ -1,0 +1,120 @@
+.wrapper-login {
+    height: 95%;
+    max-width: 500px;
+    width: 100%;
+    background: #778DA9;
+    border-radius: 5px;
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+  }
+  
+  .wrapper-login .title {
+    height: 120px;
+    background: #415A77;
+    border-radius: 5px 5px 0 0;
+    color: white;
+    font-size: 30px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 1px 1px rgb(87, 86, 86);
+  }
+  
+  .wrapper-login form {
+    padding: 25px 35px;
+    
+  }
+  
+  .wrapper-login form .row {
+    height: 40px;
+    margin-top: 15px;
+    position: relative;
+    
+  }
+  
+  .wrapper-login form .row input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    padding-left: 70px;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    
+  }
+  
+  form .row input:focus {
+    border-color: #415A77;
+  }
+  
+  form .row input::placeholder {
+    color: #415A77;
+  }
+  
+  .wrapper-login form .row i {
+    position: absolute;
+    width: 55px;
+    height: 100%;
+    color: #fff;
+    font-size: 22px;
+    background: #415A77;
+    border: 1px solid #415A77;
+    border-radius: 5px 0 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  }
+  
+  .wrapper-login form .pass {
+    margin-top: 12px;
+  }
+  
+  .wrapper-login form .pass a {
+    color: #C9ADA7;
+    font-size: 17px;
+    text-decoration: none;
+  }
+  
+  .wrapper-login form .pass a:hover {
+    text-decoration: underline;
+  }
+  
+  .wrapper-login form .button input {
+    margin-top: 5px;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    padding-left: 0px;
+    background: #1B263B;
+    border: 1px solid #1B263B;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  form .button input:hover {
+    color:#1B263B;
+    background: white;
+    border: 2px solid #1B263B;
+    
+  }
+  
+  .wrapper-login form .signup-link {
+    text-align: center;
+    padding-top: 0;
+    margin-top: 20px;
+    font-size: 17px;
+  }
+  
+  .wrapper-login form .signup-link a {
+    color: #0D1B2A;
+    text-decoration: none;
+  }
+  
+  form .signup-link a:hover {
+    text-decoration: underline;
+  }
