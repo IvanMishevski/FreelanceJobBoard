@@ -9,10 +9,10 @@ import Login from './components/login/Login'
 import JobCatalog from './components/Jobs/jobCatalog/JobCatalog'
 
 function App() {
- const [email, setEmail] = useState('');
- const userLoginHandler = (email) => {
-setEmail(email) 
-}
+  const [authData, setAuthData] = useState({});
+  const userLoginHandler = (resultData) => {
+    setAuthData(resultData)
+  }
   return (
     <>
       <div id="box">
@@ -21,13 +21,12 @@ setEmail(email)
           <Routes>
             <Route index element={<Home />} />
             <Route path="/create" element={<CreateJob />} />
-            <Route path="/login" element={<Login onLogin={userLoginHandler} email={email} />} />
+            <Route path="/login" element={<Login onLogin={userLoginHandler} />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/jobs" element={<JobCatalog/>} />
+            <Route path="/jobs" element={<JobCatalog />} />
 
           </Routes>
         </main>
-        {/* <Footer/> */}
       </div>
 
 
