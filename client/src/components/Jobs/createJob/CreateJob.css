@@ -92,5 +92,6 @@ button+button {
   padding: 0.6em 1.8em;
   border: 1px solid #333333;
   border-radius: 0.5em;
-  background-color: red;
+  background-color: #1B263B;
+  color:white;
 }

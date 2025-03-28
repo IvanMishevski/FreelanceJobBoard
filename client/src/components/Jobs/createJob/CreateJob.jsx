@@ -55,7 +55,7 @@ export default function CreateJob() {
           </div>
           
           <div className="new-job-title">
-            <label htmlFor="image">Image URL</label>
+            <label htmlFor="image">Company Logo</label>
             <input 
               type="text" 
               name="image" 

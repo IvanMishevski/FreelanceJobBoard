@@ -7,30 +7,48 @@ import CreateJob from './components/Jobs/createJob/CreateJob'
 import Register from './components/register/Register'
 import Login from './components/login/Login'
 import JobCatalog from './components/Jobs/jobCatalog/JobCatalog'
+import JobDetails from './components/Jobs/jobDetails/jobDetails'
+import Logout from './components/logout/Logout'
+import GuestGuard from './guards/GuestGuard'
+import AuthGuard from './guards/AuthGuard'
+import UserProvider from './providers/UserProvider'
 
 function App() {
   const [authData, setAuthData] = useState({});
+
   const userLoginHandler = (resultData) => {
     setAuthData(resultData)
   }
+
+  const userLogoutHandler = () => {
+    setAuthData({})
+  }
   return (
-    <>
+    <UserProvider>
       <div id="box">
         <Header />
         <main id="main-content">
           <Routes>
             <Route index element={<Home />} />
-            <Route path="/create" element={<CreateJob />} />
-            <Route path="/login" element={<Login onLogin={userLoginHandler} />} />
-            <Route path="/register" element={<Register />} />
+            <Route path="/jobs/:jobId/details" element={<JobDetails />} />
             <Route path="/jobs" element={<JobCatalog />} />
+            <Route element={<AuthGuard />}>
+              <Route path="/create" element={<CreateJob />} />
+              {/* edit */}
+              <Route path="/logout" element={<Logout />} />
+
+            </Route>
+            <Route element={<GuestGuard />}>
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+            </Route>
 
           </Routes>
         </main>
       </div>
 
 
-    </>
+    </UserProvider>
   )
 }
 

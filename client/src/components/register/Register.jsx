@@ -11,7 +11,7 @@ export default function Register() {
   const { userLoginHandler } = useUserContext();
 
   const registerHandler = async (formData) => {
-    const { email, password } = Object.fromEntries(formData);
+    const { username, email, password } = Object.fromEntries(formData);
 
     const confirmPassword = formData.get('rePassword');
 
@@ -21,11 +21,11 @@ export default function Register() {
       return;
     }
 
-    const authData = await register(email, password);
+    const authData = await register(username, email, password);
 
     userLoginHandler(authData);
 
-    navigate('/');
+    navigate('/jobs');
   }
     return (
       <div className="wrapper-register">
@@ -53,18 +53,6 @@ export default function Register() {
               
             />
           </div>
-
-          {/* telephone */}
-          <div className="input-box">
-            <input
-              type="text"
-              name="tel"
-              id="tel"
-              placeholder="Enter your phone number"
-              
-            />
-          </div>
-
           {/* password */}
           <div className="input-box">
             <input

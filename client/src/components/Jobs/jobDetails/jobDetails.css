@@ -1,0 +1,275 @@
+/* job content */
+.job-content {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+    padding: 1em;
+    background-color: #778DA9;
+    border-radius: 0.5em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* job title */
+  
+  .job-name-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em;
+    border: 1px solid #415A77;
+    border-radius: 0.5em;
+    font-size: 0.9em;
+    margin-top: 1em;
+    background-color: #415A77;
+    color: #F2E9E4;
+    text-shadow: 1px 1px rgb(0, 0, 0);
+  }
+  
+  .job-title {
+    padding: 0;
+  }
+  
+  .job-name {
+    width: 100%;
+    color: white;
+  }
+  .job-name p  {
+    padding: 1%;
+  }
+  .job-name h2 {
+    padding: 1%;
+  }
+  
+  
+  .columns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.7rem;
+  }
+  
+  .subscribers {
+    text-align: center;
+    flex-basis: 25%;
+    
+  }
+  
+  .subscribers button {
+    padding: 0.3rem 0.7rem;
+    border: none;
+    border-radius: 0.5rem;
+    color: white;
+    text-shadow: 1px 1px rgb(0, 0, 0);
+    cursor: pointer;
+    width: 100%;
+    margin:1%;
+    
+  }
+  
+  .subscribe {
+    background-color: #0D1B2A;
+  }
+  
+  .job-name-wrapper .subscribers p {
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px rgb(0, 0, 0);
+    font-size: 20px;
+  }
+  
+  .job-name {
+    margin-right: 1em;
+  }
+  
+  .job-name h2 {
+    padding-top: 0;
+  }
+  .job-description{
+    margin: 1%;
+    padding: 1%;
+    background-color: #778DA9;
+    border-radius: 0.5em;
+    text-shadow: 1px 1px rgb(87, 86, 86);
+  }
+  
+  /* comment */
+  
+  .comment {
+    margin-top: 1em;
+    border: 1px solid #999;
+    border-radius: 0.5em;
+    width: 96.5%;
+    padding: 1em;
+    background-color: #F2E9E4;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .comment header p {
+    padding: 0.5em;
+    text-align: center;
+    background-color: #9A8C98;
+    border-bottom: 1px dashed #999;
+    color: white;
+  }
+  
+  .comment-main {
+    margin: 1em;
+    display: flex;
+  }
+  
+  .userdetails {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .userdetails p {
+    padding-left: 0;
+    text-align: left;
+    color: #F2E9E4;
+  }
+  
+  .post-content p {
+    padding-left: 1.5em;
+    color: #22223B;
+  }
+  
+  .userdetails div {
+    border: 1px solid #999;
+    display: flex;
+    justify-content: center;
+    border-radius: 0.5em;
+    background-color: #e4e3e3;
+  }
+  
+  .userdetails img {
+    padding: 0;
+    align-self: center;
+    margin: 1em 0;
+    width: 5em;
+    height: 5em;
+    border-radius: 50%;
+    border: 1px solid #999;
+  }
+  
+  .footer {
+    font-size: 1.2em;
+    border-top: 1px dashed #999;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    color: #234465;
+    padding-top: 0.5em;
+  }
+  
+  .footer i {
+    background-color: #ffffff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .footer p {
+    padding-left: 0.5em;
+  }
+  
+  .footer .fas.fa-thumbs-up {
+    color: green;
+  }
+  
+  .footer .fas.fa-thumbs-down {
+    color: red;
+  }
+  
+  /* answer-comment */
+  
+  .answer-comment {
+    width: 100%;
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .answer-comment p {
+    flex-basis: 15%;
+    padding-bottom: 0.3em;
+  }
+  
+  .answer-comment p span {
+    color: #22223B;
+    font-size: 1.2em;
+  }
+  
+  .answer {
+    border: 1px solid white;
+    border-radius: 0.5em;
+    flex-basis: 85%;
+    text-align: center;
+    background-color: #415A77;
+    padding: 0.5em;
+  }
+  
+  .answer textarea {
+    width: 90%;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    padding: 0.5em;
+    border: 1px solid #999;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #22223B;
+  }
+  
+  .answer button {
+    background-color: #22223B;
+    color: white;
+    margin: 0.5em 1em;
+    padding: 0.4em 1.2em;
+    border: none;
+    border-radius: 0.5em;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .answer button:hover {
+    transform: scale(1.05);
+  }
+  
+  .comment-area {
+    min-width: 100%;
+  }
+  /* style the edit and delete buttons */
+  .buttons button{
+    background-color: none;
+    color: white!important;
+  }
+  /* why my edit buttons color is blue? */
+
+  .edit-button{
+    background-color: #415A77;
+    color: white!important;
+    margin: 0.5em 1em;
+    margin-bottom: 1em;
+    padding: 0.4em 1.2em;
+    border: 1px solid white;
+    border-radius: 0.5em;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    text-decoration: none!important;
+  }
+  .delete-button{
+    background-color: #415A77;
+    color: white;
+    margin: 0.5em 1em;
+    padding: 0.4em 1.2em;
+    border: 1px solid white;
+    border-radius: 0.5em;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  .delete-button:hover{
+    transform: scale(1.05);
+    background-color: white;
+    color: #415A77;
+  }
+  edit-link{
+    text-decoration: none;
+  }

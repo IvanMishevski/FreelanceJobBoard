@@ -5,9 +5,7 @@ import { UserContext } from '../../contexts/UserContext';
 import { useLogin } from '../../api/userApi';
 import { toast } from 'react-toastify';
 
-export default function Login({
-    onLogin
-}) {
+export default function Login() {
     const navigate = useNavigate();
     const { userLoginHandler } = useContext(UserContext);
     const { login } = useLogin();
@@ -15,14 +13,17 @@ export default function Login({
     const loginHandler = async (_, formData) => {
         const values = Object.fromEntries(formData);
 
+        try {
+            const authData = await login(values.email, values.password);
+            userLoginHandler(authData);
 
-        const authData = await login(values.email, values.password);
-        onLogin(authData);
-        navigate('/jobs');
+            toast.success('Successful Login')
 
-
-
-    }
+            navigate(-1);
+        } catch (err) {
+            toast.error(err.message)
+        }
+    };
         const [_, loginAction, isPending] = useActionState(loginHandler, { email: '', password: '' });
 
 

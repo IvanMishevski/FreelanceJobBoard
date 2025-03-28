@@ -1,0 +1,29 @@
+#catalog-page {
+    background-color: transparent;
+    box-shadow: 0px 0px 40px 0px;
+    overflow: hidden;
+    border-radius: 10px;
+    padding: 20px;
+    height: auto;
+    width: 900px;
+    justify-content: center;
+    justify-self: center;
+    text-align: center;
+}
+
+#catalog-page>h1 {
+    color: #fff;
+    font-family: "Agency FB";
+    font-size: 48px;
+    font-weight: 700;
+    margin-top: 10px;
+    text-transform: uppercase;
+    text-align: center;
+
+}
+#catalog-page h1 {
+    justify-self: center;
+    position: relative;
+    
+
+}
