@@ -1364,14 +1364,6 @@
                   "companyLogo": "",
                   "description": "Seeking a talented graphic designer with experience in Adobe Creative Suite. Portfolio required. Will work on branding, marketing materials, and digital assets for various clients."
                 },
-                {
-                    "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
-                  "jobTitle": "Content Writer",
-                  "company": "WordCraft Media",
-                  "salary": "$45/hour",
-                  "companyLogo": "",
-                  "description": "Remote position for a content writer specializing in tech industry articles. Must have excellent research skills and the ability to explain complex topics in simple terms."
-                }
         ]
     };
     var rules$1 = {
