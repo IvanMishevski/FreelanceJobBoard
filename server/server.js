@@ -1345,27 +1345,33 @@
     	sessions: {
     	}
     };
-    var seedData = {
-    	comments: {
-    		"0a272c58-b7ea-4e09-a000-7ec988248f66": {
-    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-    			comment: "Great game!",
-    			gameId: "2b420d7c-3c8a-4d67-b608-b256228e60dc",
-    			_createdOn: 1614260681375,
-    			_id: "0a272c58-b7ea-4e09-a000-7ec988248f66"
-    		}
-    	},
-        games: [
-            {
-                "_ownerId": "560f6ed0-86c3-4470-90a7-87bc9a80fe98",
-                "title": "MK3 Ultimate",
-                "category": "Fighting",
-                "maxLevel": "10",
-                "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f9/Ultimate_MK3.png/220px-Ultimate_MK3.png",
-                "summary": "Ultimate Mortal Kombat 3 was released to arcades in 1995. It is an update of Mortal Kombat 3, featuring altered gameplay, additional characters, and new arenas. Various home versions of the game were released soon afterward, although none of these were completely identical to the arcade version.",
-                "_createdOn": 1742238372475,
-                "_id": "2b420d7c-3c8a-4d67-b608-b256228e60dc"
-            }
+    var seedData = {   
+        jobs: [
+            
+                {
+                  "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                  "jobTitle": "Senior Web Developer",
+                  "company": "TechSolutions Inc.",
+                  "salary": "$90,000 - $120,000/year",
+                  "companyLogo": "",
+                  "description": "Looking for an experienced web developer with 5+ years of experience in React, Node.js, and AWS. Must be comfortable working in an agile environment and leading small teams."
+                },
+                {
+                  "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
+                  "jobTitle": "Graphic Designer",
+                  "company": "Creative Minds Agency",
+                  "salary": "$65,000/year",
+                  "companyLogo": "",
+                  "description": "Seeking a talented graphic designer with experience in Adobe Creative Suite. Portfolio required. Will work on branding, marketing materials, and digital assets for various clients."
+                },
+                {
+                    "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                  "jobTitle": "Content Writer",
+                  "company": "WordCraft Media",
+                  "salary": "$45/hour",
+                  "companyLogo": "",
+                  "description": "Remote position for a content writer specializing in tech industry articles. Must have excellent research skills and the ability to explain complex topics in simple terms."
+                }
         ]
     };
     var rules$1 = {

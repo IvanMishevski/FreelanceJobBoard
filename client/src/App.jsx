@@ -12,17 +12,9 @@ import Logout from './components/logout/Logout'
 import GuestGuard from './guards/GuestGuard'
 import AuthGuard from './guards/AuthGuard'
 import UserProvider from './providers/UserProvider'
+import { useUserContext } from './contexts/UserContext'
 
 function App() {
-  const [authData, setAuthData] = useState({});
-
-  const userLoginHandler = (resultData) => {
-    setAuthData(resultData)
-  }
-
-  const userLogoutHandler = () => {
-    setAuthData({})
-  }
   return (
     <UserProvider>
       <div id="box">
@@ -32,16 +24,19 @@ function App() {
             <Route index element={<Home />} />
             <Route path="/jobs/:jobId/details" element={<JobDetails />} />
             <Route path="/jobs" element={<JobCatalog />} />
+
             <Route element={<AuthGuard />}>
               <Route path="/create" element={<CreateJob />} />
               {/* edit */}
               <Route path="/logout" element={<Logout />} />
-
             </Route>
+
+
             <Route element={<GuestGuard />}>
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
             </Route>
+
 
           </Routes>
         </main>

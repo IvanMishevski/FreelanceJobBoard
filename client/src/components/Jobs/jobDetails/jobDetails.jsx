@@ -7,22 +7,23 @@ import { useJob, useDeleteJob } from '../../../api/jobsApi';
 const JobDetails = () => {
     const { jobId } = useParams();
     const { job } = useJob(jobId);
-    const { email, userId } = useAuth();
+    const { userId } = useAuth();
 
-    const gameDeleteClickHandler = async () => {
-        const hasConfirm = confirm(`Are you sure you want to delete ${game.title} game?`);
+    const jobDeleteClickHandler = async () => {
+        const hasConfirm = confirm(`Are you sure you want to delete ${job.jobTitle} game?`);
 
         if (!hasConfirm) {
             return;
         }
 
-        await deleteGame(gameId);
+        await deleteGame(jobId);
 
         navigate('/games');
     };
 
-    const isOwner = userId === game._ownerId;
-
+    const isOwner = userId === job._ownerId; 
+    console.log(userId);
+    
     return (
         <div className="container">
             <div className="job-content">
@@ -36,8 +37,17 @@ const JobDetails = () => {
                             </div>
                             <h2>Salary:{job.salary}$</h2>
                             <div className="answear">
-                                <button className="edit-button"><Link to={`/jobs/${job._id}/edit`} className="edit-link" style={{ color: 'white', textDecoration: 'none' }}>Edit</Link></button>
-                                <button onClick={jobDeleteClickHandler} className="delete-button">Delete</button>
+                                {isOwner && (
+                                    <>
+                                    <button className="edit-button"><Link to={`/jobs/${job._id}/edit`} className="edit-link" style={{ color: 'white', textDecoration: 'none' }}>Edit</Link></button>
+                                    <button onClick={jobDeleteClickHandler} className="delete-button">Delete</button>
+                                </>
+                                )
+
+
+                                }
+
+
                             </div>
 
                         </div>

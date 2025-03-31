@@ -1,7 +1,3 @@
-*{
-    overflow-y: hidden;
-    overflow-x: hidden;
-}
 .wrapper-register{
     position: relative;
     max-width: 430px;
