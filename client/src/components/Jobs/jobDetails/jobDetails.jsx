@@ -1,13 +1,21 @@
 import React from 'react';
 import './jobDetails.css';
-import { Link, useNavigate, useParams } from 'react-router';
+import { Link, Navigate, useNavigate, useParams } from 'react-router';
 import useAuth from '../../../hooks/useAuth';
-import { useJob, useDeleteJob } from '../../../api/jobsApi';
+import { useDeleteJob, useJob } from '../../../api/jobsApi';
+import { useApplications, useCreateApplication } from '../../../api/applicationsApi';
+
 
 const JobDetails = () => {
+    const navigate = useNavigate();
     const { jobId } = useParams();
     const { job } = useJob(jobId);
-    const { userId } = useAuth();
+    const { userId, email } = useAuth();
+    const { deleteJob } = useDeleteJob();
+    const { create } = useCreateApplication(jobId);
+    const { applications, addApplication } = useApplications(jobId);
+    console.log(applications);
+    
 
     const jobDeleteClickHandler = async () => {
         const hasConfirm = confirm(`Are you sure you want to delete ${job.jobTitle} game?`);
@@ -16,14 +24,23 @@ const JobDetails = () => {
             return;
         }
 
-        await deleteGame(jobId);
+        await deleteJob(jobId);
 
-        navigate('/games');
+        navigate('/jobs');
     };
 
-    const isOwner = userId === job._ownerId; 
-    console.log(userId);
-    
+    const isOwner = userId === job._ownerId;
+
+    const applicationCreateHandler = async (formData) => {
+        const applicationData = Object.fromEntries(formData);
+        // Server update
+        const applicationResult = await create(jobId, applicationData);
+
+        // Local state update
+        addApplication({ ...applicationResult, author: { email } })
+
+        window.location.reload();
+    };
     return (
         <div className="container">
             <div className="job-content">
@@ -35,13 +52,13 @@ const JobDetails = () => {
                             <div className="job-description">
                                 Description:{job.description}
                             </div>
-                            <h2>Salary:{job.salary}$</h2>
+                            <h2>Salary:{job.salary}</h2>
                             <div className="answear">
                                 {isOwner && (
                                     <>
-                                    <button className="edit-button"><Link to={`/jobs/${job._id}/edit`} className="edit-link" style={{ color: 'white', textDecoration: 'none' }}>Edit</Link></button>
-                                    <button onClick={jobDeleteClickHandler} className="delete-button">Delete</button>
-                                </>
+                                        <button className="edit-button"><Link to={`/jobs/${job._id}/edit`} className="edit-link" style={{ color: 'white', textDecoration: 'none' }}>Edit</Link></button>
+                                        <button onClick={jobDeleteClickHandler} className="delete-button">Delete</button>
+                                    </>
                                 )
 
 
@@ -53,40 +70,39 @@ const JobDetails = () => {
                         </div>
                         <div className="subscribers">
                             <p>
-                                {/* Applications: <span>{applications.length || 0}</span> */}
+                                Applications: <span>{applications.length || 0}</span>
                             </p>
                         </div>
                     </div>
                 </div>
 
-                {/* {comments.map((comment, index) => (
-          <div className="comment" key={index}>
-            <header className="header">
-              <p>
-                <span>{comment.userId?.username}</span> commented
-                <time>{elapsedTime(comment.created_at)}</time>
-              </p>
-            </header>
-            <div className="comment-main">
-              <div className="userdetails">
-                <img src="profile.png" alt="avatar" />
-              </div>
-              <div className="post-content">
-                <p>
-                  {comment.text}
-                </p>
-              </div>
-            </div>
-          </div>
-        ))} */}
+                {applications.map((application, index) => (
+                    <div className="comment" key={index}>
+                        <header className="header">
+                            <p>
+                                <span>{email}</span> applied:
+                            </p>
+                        </header>
+                        <div className="comment-main">
+                            <div className="userdetails">
+                                <img src="/profile.png" alt="avatar" />
+                            </div>
+                            <div className="post-content">
+                                <p>
+                                    {application.application.text}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                ))}
 
                 {(
                     <div className="answer-comment">
                         <p>
-                            <span></span> Add new comment:
+                            <span></span> Apply for job:
                         </p>
                         <div className="answer">
-                            <form >
+                            <form action={applicationCreateHandler}>
                                 <textarea
                                     name="text"
                                     id="comment"

@@ -3,7 +3,7 @@ import useAuth from "../hooks/useAuth";
 
 const baseUrl = `http://localhost:3030/data/applications`;
 
-function commentsReducer(state, action) {
+function applicationReducer(state, action) {
     switch (action.type) {
         case 'ADD_COMMENT': 
             return [...state, action.payload]
@@ -14,10 +14,10 @@ function commentsReducer(state, action) {
     }
 };
 
-export const useComments = (jobId) => {
+export const useApplications = (jobId) => {
     const { request } = useAuth();
 
-    const [applications, dispatch] = useReducer(commentsReducer, [])
+    const [applications, dispatch] = useReducer(applicationReducer, [])
 
     useEffect(() => {
         const searchParams = new URLSearchParams({
@@ -35,7 +35,7 @@ export const useComments = (jobId) => {
     }
 }
 
-export const useCreateComment = () => {
+export const useCreateApplication = () => {
     const { request } = useAuth();
 
     const create = (jobId, application) => {

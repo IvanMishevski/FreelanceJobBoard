@@ -95,3 +95,26 @@ button+button {
   background-color: #1B263B;
   color:white;
 }
+.error-message {
+  color: #d32f2f;
+  font-size: 0.8rem;
+  margin-top: 4px;
+}
+
+.server-error {
+  background-color: #ffebee;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+.error-input {
+  border: 1px solid #d32f2f !important;
+  background-color: #fff8f8;
+}
+
+button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}

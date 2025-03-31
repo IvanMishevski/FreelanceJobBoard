@@ -96,19 +96,19 @@
   
   .comment {
     margin-top: 1em;
-    border: 1px solid #999;
+    border: 1px solid #1B263B;
     border-radius: 0.5em;
     width: 96.5%;
     padding: 1em;
-    background-color: #F2E9E4;
+    background-color: #778DA9;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
   .comment header p {
     padding: 0.5em;
     text-align: center;
-    background-color: #9A8C98;
-    border-bottom: 1px dashed #999;
+    background-color: #1B263B;
+    border-bottom: 1px dashed #1B263B;
     color: white;
   }
   
@@ -131,7 +131,8 @@
   
   .post-content p {
     padding-left: 1.5em;
-    color: #22223B;
+    color: white;
+    font-weight: bold;  
   }
   
   .userdetails div {

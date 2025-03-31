@@ -11,8 +11,8 @@ import JobDetails from './components/Jobs/jobDetails/jobDetails'
 import Logout from './components/logout/Logout'
 import GuestGuard from './guards/GuestGuard'
 import AuthGuard from './guards/AuthGuard'
-import UserProvider from './providers/UserProvider'
-import { useUserContext } from './contexts/UserContext'
+import JobEdit from './components/Jobs/jobEdit/JobEdit'
+import UserProvider from './providers/UserProvider.jsx'
 
 function App() {
   return (
@@ -27,7 +27,7 @@ function App() {
 
             <Route element={<AuthGuard />}>
               <Route path="/create" element={<CreateJob />} />
-              {/* edit */}
+              <Route path="/jobs/:jobId/edit" element={<JobEdit />} />
               <Route path="/logout" element={<Logout />} />
             </Route>
 

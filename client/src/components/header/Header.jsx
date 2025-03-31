@@ -18,7 +18,6 @@ export default function Header() {
                     ? (
                     <>
                         <Link to="/create"><li>Create</li></Link>
-                        <Link to="/profile"><li>Profile</li></Link>
                         <Link to="/logout"><li>Logout</li></Link>
                         <Link><li>Welcome {email}!</li></Link>
                     </>

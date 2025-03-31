@@ -88,4 +88,30 @@
   form .text h3 a:hover{
     text-decoration: underline;
   }
+  .error-message {
+    color: #e74c3c;
+    background-color: #fadbd8;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+
+    font-weight: 800;
+  }
+  
+  .field-error {
+    color: #e74c3c;
+    font-size: 0.8rem;
+    margin-top: 5px;
+    text-align: left;
+  }
+  
+  .error-input {
+    border: 1px solid #e74c3c !important;
+  }
+  
+  .input-box button input:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
  

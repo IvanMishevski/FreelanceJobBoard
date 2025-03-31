@@ -120,3 +120,22 @@
   form .signup-link a:hover {
     text-decoration: underline;
   }
+  .error-message {
+    color: white;
+    font-size: 0.8rem;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.error-input {
+    border: 1px solid #ff3333 !important;
+}
+.auth-error {
+  background-color: #ff3333;
+  padding: 8px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  text-align: center;
+}

@@ -4,7 +4,7 @@ export default function Home() {
     return (
         <div className="welcome-text">
             <h1>Find the perfect job for you</h1>
-            <p><Link to="/jobs"></Link>View Jobs</p>
+           <Link to="/jobs"> <p>View Jobs</p></Link>
         </div>
     )
 }
