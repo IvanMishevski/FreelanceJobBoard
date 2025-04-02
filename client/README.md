@@ -1,12 +1,122 @@
-# React + Vite
+# FreelanceJobBoard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack web application that connects freelancers with clients, allowing users to post, browse, and apply for freelance jobs.
 
-Currently, two official plugins are available:
+## Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Frontend Framework**: React
+- **Routing**: React Router
+- **State Management**: Context API with custom hooks
+- **HTTP Communication**: Custom request utility
+- **Form Handling**: Controlled components with validation
+- **Notifications**: React-toastify
 
-## Expanding the ESLint configuration
+## Key Features
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- User Authentication (Register/Login/Logout)
+- Job Management (Create, Edit, Delete)
+- Job Application System
+- Protected Routes with Guards
+- Form Validation
+- Persistent Authentication
+
+## Project Structure
+
+```
+src/
+├── api/                  # API service modules
+│   └── applicationsApi.js
+├── components/           # React components
+│   ├── header/           # Navigation component
+│   ├── home/             # Homepage component
+│   ├── Jobs/             # Job-related components
+│   │   ├── createJob/
+│   │   ├── jobCatalog/
+│   │   ├── jobDetails/
+│   │   └── jobEdit/
+│   ├── login/
+│   ├── logout/
+│   └── register/
+├── contexts/             # React context definitions
+├── guards/               # Route protection components
+│   ├── AuthGuard.jsx
+│   └── GuestGuard.jsx
+├── hooks/                # Custom React hooks
+│   ├── useAuth.js
+│   └── usePersistedState.js
+└── providers/            # Context providers
+    └── UserProvider.jsx
+```
+
+## Getting Started
+
+1. Clone the repository
+```bash
+git clone https://github.com/IvanMishevski/FreelanceJobBoard.git
+```
+
+2. Install dependencies
+```bash
+npm install
+```
+
+3. Start the backend server
+```bash
+cd server
+npm install
+node server.js
+```
+
+4. Start the frontend development server
+```bash
+cd client
+npm install
+npm start
+```
+
+5. Navigate to `http://localhost:5173/`
+
+## Environment Setup
+
+Both the frontend and backend servers need to run simultaneously:
+- Frontend: `http://localhost:5173/`
+- Backend: `http://localhost:3030/`
+
+## Main Features
+
+### User Management
+- User registration with email validation
+- Login with credentials
+- Authentication state persistence using localStorage
+- Protected routes for authenticated users
+
+### Job Management
+- Browse all available jobs
+- View detailed job information
+- Create new job listings with validation
+- Edit and delete own job listings
+- Apply for jobs with application text
+
+### Application System
+- Submit applications for jobs
+- View applications 
+
+## Architecture
+
+The application follows React's recommended practices:
+- Component-based architecture
+- Custom hooks for reusable logic
+- Context API for state management
+- Route guards for access control
+- Persistent authentication state
+
+## Security Features
+- Protected routes with authentication guards
+- Form validation on both client and server
+- Secure authentication token storage
+## Future Enhancements
+- User profiles with profile pictures
+- Job search and filtering
+- Notifications for job applications
+- User messaging system
+
